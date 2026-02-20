@@ -107,10 +107,11 @@ describe("NodeHttpHandler", () => {
           }),
         ],
       ])("sets socketAcquisitionWarningTimeout correctly when input is %s", async (_, option) => {
-        vi.spyOn(timing, "setTimeout");
+        vi.spyOn(global, "setInterval");
         const nodeHttpHandler = new NodeHttpHandler(option);
         await nodeHttpHandler.handle({} as any);
-        expect(vi.mocked(timing.setTimeout).mock.calls[0][1]).toBe(randomSocketAcquisitionWarningTimeout);
+        expect(vi.mocked(setInterval).mock.calls[0][1]).toBe(randomSocketAcquisitionWarningTimeout);
+        nodeHttpHandler.destroy();
       });
 
       it.each([
@@ -268,6 +269,7 @@ describe("NodeHttpHandler", () => {
 
       describe("per-request requestTimeout", () => {
         it("should use per-request timeout over handler config timeout", async () => {
+          vi.spyOn(timing, "setTimeout");
           const testTimeout = async (handlerTimeout: number, requestTimeout?: number) => {
             const handler = new NodeHttpHandler({ requestTimeout: handlerTimeout });
             await handler.handle(
@@ -407,6 +409,42 @@ describe("NodeHttpHandler", () => {
     it("should be callable and return nothing", () => {
       const nodeHttpHandler = new NodeHttpHandler();
       expect(nodeHttpHandler.destroy()).toBeUndefined();
+    });
+  });
+
+  describe("socket warning interval", () => {
+    afterEach(() => {
+      vi.clearAllMocks();
+    });
+
+    it("does not create an interval when maxSockets is Infinity", async () => {
+      vi.spyOn(global, "setInterval");
+      const handler = new NodeHttpHandler({
+        httpAgent: new http.Agent({ maxSockets: Infinity }),
+        httpsAgent: new https.Agent({ maxSockets: Infinity }),
+      });
+      await handler.handle({ protocol: "http:", headers: {}, method: "GET", hostname: "localhost", path: "/" } as any);
+      expect(setInterval).not.toHaveBeenCalled();
+      handler.destroy();
+    });
+
+    it("creates only one interval across multiple handle() calls", async () => {
+      vi.spyOn(global, "setInterval");
+      const handler = new NodeHttpHandler({ httpAgent: { maxSockets: 25 } });
+      const req = { protocol: "http:", headers: {}, method: "GET", hostname: "localhost", path: "/" } as any;
+      await handler.handle(req);
+      await handler.handle(req);
+      await handler.handle(req);
+      expect(setInterval).toHaveBeenCalledTimes(1);
+      handler.destroy();
+    });
+
+    it("cleans up the interval on destroy()", async () => {
+      vi.spyOn(global, "clearInterval");
+      const handler = new NodeHttpHandler({ httpAgent: { maxSockets: 25 } });
+      await handler.handle({ protocol: "http:", headers: {}, method: "GET", hostname: "localhost", path: "/" } as any);
+      handler.destroy();
+      expect(clearInterval).toHaveBeenCalledTimes(1);
     });
   });
 
