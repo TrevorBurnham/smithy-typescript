@@ -12,6 +12,12 @@ describe(substring.name, () => {
     it("when input.length < stop", () => {
       expect(substring("", 0, 1, false)).toBeNull();
     });
+
+    it("when input contains non-ASCII characters", () => {
+      expect(substring("abc\u0080", 0, 3, false)).toBeNull();
+      expect(substring("abcé", 0, 3, false)).toBeNull();
+      expect(substring("ab日c", 0, 3, false)).toBeNull();
+    });
   });
 
   it("returns substring", () => {
