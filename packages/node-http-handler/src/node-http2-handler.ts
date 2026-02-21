@@ -120,8 +120,7 @@ export class NodeHttp2Handler implements HttpHandler<NodeHttp2HandlerOptions> {
       // if the request was already aborted, prevent doing extra work
       if (abortSignal?.aborted) {
         fulfilled = true;
-        const abortError = new Error("Request aborted");
-        abortError.name = "AbortError";
+        const abortError = buildAbortError(abortSignal);
         reject(abortError);
         return;
       }
@@ -194,8 +193,7 @@ export class NodeHttp2Handler implements HttpHandler<NodeHttp2HandlerOptions> {
       if (abortSignal) {
         const onAbort = () => {
           req.close();
-          const abortError = new Error("Request aborted");
-          abortError.name = "AbortError";
+          const abortError = buildAbortError(abortSignal);
           rejectWithDestroy(abortError);
         };
         if (typeof (abortSignal as AbortSignal).addEventListener === "function") {
@@ -260,4 +258,21 @@ export class NodeHttp2Handler implements HttpHandler<NodeHttp2HandlerOptions> {
       session.destroy();
     }
   }
+}
+
+/**
+ * Builds an abort error, using the AbortSignal's reason if available.
+ */
+function buildAbortError(abortSignal?: { reason?: unknown }): Error {
+  if (abortSignal?.reason) {
+    if (abortSignal.reason instanceof Error) {
+      return abortSignal.reason;
+    }
+    const abortError = new Error(String(abortSignal.reason));
+    abortError.name = "AbortError";
+    return abortError;
+  }
+  const abortError = new Error("Request aborted");
+  abortError.name = "AbortError";
+  return abortError;
 }

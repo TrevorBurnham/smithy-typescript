@@ -196,8 +196,7 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
 
       // if the request was already aborted, prevent doing extra work
       if (abortSignal?.aborted) {
-        const abortError = new Error("Request aborted");
-        abortError.name = "AbortError";
+        const abortError = buildAbortError(abortSignal);
         reject(abortError);
         return;
       }
@@ -294,8 +293,7 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
         const onAbort = () => {
           // ensure request is destroyed
           req.destroy();
-          const abortError = new Error("Request aborted");
-          abortError.name = "AbortError";
+          const abortError = buildAbortError(abortSignal);
           reject(abortError);
         };
         if (typeof (abortSignal as AbortSignal).addEventListener === "function") {
@@ -353,4 +351,21 @@ or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler conf
   httpHandlerConfigs(): NodeHttpHandlerOptions {
     return this.config ?? {};
   }
+}
+
+/**
+ * Builds an abort error, using the AbortSignal's reason if available.
+ */
+function buildAbortError(abortSignal?: { reason?: unknown }): Error {
+  if (abortSignal?.reason) {
+    if (abortSignal.reason instanceof Error) {
+      return abortSignal.reason;
+    }
+    const abortError = new Error(String(abortSignal.reason));
+    abortError.name = "AbortError";
+    return abortError;
+  }
+  const abortError = new Error("Request aborted");
+  abortError.name = "AbortError";
+  return abortError;
 }
