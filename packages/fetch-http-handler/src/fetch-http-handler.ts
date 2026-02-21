@@ -87,8 +87,7 @@ export class FetchHttpHandler implements HttpHandler<FetchHttpHandlerOptions> {
 
     // if the request was already aborted, prevent doing extra work
     if (abortSignal?.aborted) {
-      const abortError = new Error("Request aborted");
-      abortError.name = "AbortError";
+      const abortError = buildAbortError(abortSignal);
       return Promise.reject(abortError);
     }
 
@@ -185,8 +184,7 @@ export class FetchHttpHandler implements HttpHandler<FetchHttpHandlerOptions> {
       raceOfPromises.push(
         new Promise<never>((resolve, reject) => {
           const onAbort = () => {
-            const abortError = new Error("Request aborted");
-            abortError.name = "AbortError";
+            const abortError = buildAbortError(abortSignal);
             reject(abortError);
           };
           if (typeof (abortSignal as AbortSignal).addEventListener === "function") {
@@ -215,4 +213,21 @@ export class FetchHttpHandler implements HttpHandler<FetchHttpHandlerOptions> {
   httpHandlerConfigs(): FetchHttpHandlerOptions {
     return this.config ?? {};
   }
+}
+
+/**
+ * Builds an abort error, using the AbortSignal's reason if available.
+ */
+function buildAbortError(abortSignal?: { reason?: unknown }): Error {
+  if (abortSignal?.reason) {
+    if (abortSignal.reason instanceof Error) {
+      return abortSignal.reason;
+    }
+    const abortError = new Error(String(abortSignal.reason));
+    abortError.name = "AbortError";
+    return abortError;
+  }
+  const abortError = new Error("Request aborted");
+  abortError.name = "AbortError";
+  return abortError;
 }
