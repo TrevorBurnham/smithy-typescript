@@ -12,8 +12,8 @@ export const resolvedPath = (
   isGreedyLabel: boolean
 ): string => {
   if (input != null && (input as Record<string, unknown>)[memberName] !== undefined) {
-    const labelValue = labelValueProvider() as string;
-    if (labelValue.length <= 0) {
+    const labelValue = labelValueProvider();
+    if (labelValue == null || labelValue.length <= 0) {
       throw new Error("Empty value provided for input HTTP label: " + memberName + ".");
     }
     resolvedPath = resolvedPath.replace(
