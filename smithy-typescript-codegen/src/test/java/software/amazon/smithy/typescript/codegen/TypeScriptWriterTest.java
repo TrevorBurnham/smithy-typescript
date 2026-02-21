@@ -11,6 +11,7 @@ import static software.amazon.smithy.typescript.codegen.TypeScriptWriter.CODEGEN
 
 import java.nio.file.Paths;
 import org.junit.jupiter.api.Test;
+import software.amazon.smithy.model.traits.DeprecatedTrait;
 
 public class TypeScriptWriterTest {
 
@@ -90,5 +91,40 @@ public class TypeScriptWriterTest {
                 .trim(),
             result.trim()
         );
+    }
+
+    @Test
+    public void buildDeprecationAnnotationWithMessageOnly() {
+        DeprecatedTrait trait = DeprecatedTrait.builder()
+            .message("Use FooV2 instead")
+            .build();
+        String result = TypeScriptWriter.buildDeprecationAnnotation(trait);
+        assertEquals("@deprecated Use FooV2 instead", result);
+    }
+
+    @Test
+    public void buildDeprecationAnnotationWithSinceOnly() {
+        DeprecatedTrait trait = DeprecatedTrait.builder()
+            .since("2024-01-01")
+            .build();
+        String result = TypeScriptWriter.buildDeprecationAnnotation(trait);
+        assertEquals("@deprecated \n@since 2024-01-01", result);
+    }
+
+    @Test
+    public void buildDeprecationAnnotationWithMessageAndSince() {
+        DeprecatedTrait trait = DeprecatedTrait.builder()
+            .message("Use FooV2 instead")
+            .since("2024-01-01")
+            .build();
+        String result = TypeScriptWriter.buildDeprecationAnnotation(trait);
+        assertEquals("@deprecated Use FooV2 instead\n@since 2024-01-01", result);
+    }
+
+    @Test
+    public void buildDeprecationAnnotationWithNoFields() {
+        DeprecatedTrait trait = DeprecatedTrait.builder().build();
+        String result = TypeScriptWriter.buildDeprecationAnnotation(trait);
+        assertEquals("@deprecated deprecated", result);
     }
 }
