@@ -2,4 +2,4 @@
 "@smithy/util-endpoints": minor
 ---
 
-reject non-ASCII input in substring
+return empty when given non-ASCII input in substring
