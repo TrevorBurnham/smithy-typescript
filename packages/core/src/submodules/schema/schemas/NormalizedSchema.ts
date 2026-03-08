@@ -45,6 +45,13 @@ const anno = {
 };
 
 /**
+ * Module-level cache for NormalizedSchema.of().
+ * Uses WeakMap keyed on object-type schemas (arrays, objects) so entries
+ * are garbage-collected when the schema is no longer referenced.
+ */
+const schemaCache = new WeakMap<object, NormalizedSchema>();
+
+/**
  * Wraps both class instances, numeric sentinel values, and member schema pairs.
  * Presents a consistent interface for interacting with polymorphic schema representations.
  *
@@ -150,6 +157,19 @@ export class NormalizedSchema implements INormalizedSchema {
       // container.
       throw new Error(`@smithy/core/schema - may not init unwrapped member schema=${JSON.stringify(ref, null, 2)}.`);
     }
+
+    // Cache lookup for non-member, non-NormalizedSchema refs.
+    if (typeof sc === "object" && sc !== null) {
+      const cached = schemaCache.get(sc);
+      if (cached !== undefined) {
+        return cached;
+      }
+      const ns = new NormalizedSchema(sc as $SchemaRef);
+      schemaCache.set(sc, ns);
+      return ns;
+    }
+
+    // Primitive schemas (numbers, strings) bypass cache
     return new NormalizedSchema(sc as $SchemaRef);
   }
 
