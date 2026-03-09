@@ -1,0 +1,256 @@
+Statistical profiling result from packages/core/src/submodules/schema/schemas/profiles/cached-v8.log, (697 ticks, 194 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    216   31.0%          /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+    109   15.6%   22.7%  JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     68    9.8%   14.1%  JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+     28    4.0%    5.8%  JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+     24    3.4%    5.0%  JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:309:32
+     17    2.4%    3.5%  JS: *member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+     12    1.7%    2.5%  JS: *of /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:317:14
+      8    1.1%    1.7%  JS: *isListSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:359:17
+      5    0.7%    1.0%  JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      3    0.4%    0.6%  JS: *getSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:341:14
+      3    0.4%    0.6%  JS: *getOwnTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:436:17
+      3    0.4%    0.6%  JS: *getMergedTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:426:20
+      2    0.3%    0.4%  JS: *isDocumentSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:401:21
+      1    0.1%    0.2%  JS: ^normalizeString node:path:90:25
+      1    0.1%    0.2%  JS: *translateTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:221:25
+      1    0.1%    0.2%  JS: *getMemberTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:433:20
+      1    0.1%    0.2%  JS: *getKeySchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:439:17
+      1    0.1%    0.2%  JS: *NormalizedSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:254:24
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+    287   41.2%   59.7%  JavaScript
+      0    0.0%    0.0%  C++
+    155   22.2%   32.2%  GC
+    216   31.0%          Shared libraries
+    194   27.8%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    216   31.0%  /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     61   28.2%    JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+     61  100.0%      /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     61  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     49   80.3%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     49  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     10   16.4%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      9   90.0%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1   10.0%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      2    3.3%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      2  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     53   24.5%    JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     48   90.6%      JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     48  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4    7.5%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      4  100.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      4  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.9%      JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     13    6.0%    /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+      8   61.5%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      6   75.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      6  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      2   25.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      1   50.0%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   50.0%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      2   15.4%      JS: *member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+      2  100.0%        JS: *getKeySchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:439:17
+      2  100.0%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      2  100.0%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1    7.7%      JS: ^simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      1  100.0%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    7.7%      JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+      1  100.0%        /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+      1  100.0%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      1  100.0%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1    7.7%      JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      1  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      1  100.0%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     12    5.6%    JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+     12  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     12  100.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     12  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      7    3.2%    JS: *getKeySchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:439:17
+      7  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      7  100.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      7  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      6    2.8%    JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      6  100.0%      JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1   16.7%        JS: ~<anonymous> node:net:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1   16.7%        JS: ~<anonymous> node:internal/streams/readable:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1   16.7%        JS: ~<anonymous> node:internal/streams/pipeline:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1   16.7%        JS: ~<anonymous> node:internal/streams/operators:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1   16.7%        JS: ~<anonymous> node:internal/streams/duplex:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1   16.7%        /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+      1  100.0%          JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      5    2.3%    JS: *getMergedTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:426:20
+      5  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      5  100.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      5  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4    1.9%    JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      4  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4    1.9%    JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:309:32
+      4  100.0%      JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      4  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      4  100.0%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      4  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+    194   27.8%  UNKNOWN
+     14    7.2%    JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+     14  100.0%      JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      4   28.6%        JS: ~<anonymous> node:tty:1:1
+      4  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      4  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      3   21.4%        JS: ~<anonymous> node:internal/streams/duplex:1:1
+      3  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      3  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    7.1%        JS: ~<anonymous> node:stream:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    7.1%        JS: ~<anonymous> node:perf_hooks:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    7.1%        JS: ~<anonymous> node:internal/streams/readable:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    7.1%        JS: ~<anonymous> node:internal/streams/operators:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    7.1%        JS: ~<anonymous> node:internal/streams/compose:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    7.1%        JS: ~<anonymous> node:internal/perf/usertiming:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    7.1%        JS: ~<anonymous> node:internal/perf/timerify:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+     12    6.2%    JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     10    5.2%    JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:1:1
+     10  100.0%      JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     10  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4    2.1%    JS: ~WriteStream node:tty:88:21
+      2   50.0%      JS: ~refresh node:internal/util/colors:26:10
+      2  100.0%        JS: ~<anonymous> node:internal/util/colors:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      2  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      2   50.0%      /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+      2  100.0%        JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      2  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4    2.1%    JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/protocol-http/dist-cjs/index.js:1:1
+      4  100.0%      JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:1:1
+      4  100.0%        JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      4  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4    2.1%    JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      4  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    1.5%    JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      3  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      3  100.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      3  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    1.0%    JS: ~NormalizedSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:265:16
+      2  100.0%      JS: ~member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+      2  100.0%        JS: ~structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+      2  100.0%          /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+      2  100.0%            JS: ~simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      2    1.0%    JS: ^<anonymous> node:internal/modules/cjs/loader:701:28
+      2  100.0%      JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/util-middleware/dist-cjs/index.js:1:1
+      2  100.0%        JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:1:1
+      2  100.0%          JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      2  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+    109   15.6%  JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     85   78.0%    JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     85  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     20   18.3%    JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     20  100.0%      JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     20  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    2.8%    JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      3  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     68    9.8%  JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+     68  100.0%    /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     68  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     52   76.5%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     52  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     15   22.1%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     14   93.3%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     14  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    6.7%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.5%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     28    4.0%  JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+     28  100.0%    JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     28  100.0%      JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     28  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     24    3.4%  JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:309:32
+     23   95.8%    JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+     23  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     23  100.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     23  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    4.2%    JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      1  100.0%      JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     17    2.4%  JS: *member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+     17  100.0%    JS: *getKeySchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:439:17
+     17  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+     17  100.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+     17  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     12    1.7%  JS: *of /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:317:14
+     11   91.7%    JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      8   72.7%      JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      8  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3   27.3%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      3  100.0%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      3  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    8.3%    JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+      8    1.1%  JS: *isListSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:359:17
+      6   75.0%    JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      6  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      5   83.3%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      5  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   16.7%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      1  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      2   25.0%    JS: ^getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      2  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:52:27
+      2  100.0%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-cached.cjs:1:1
+      2  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+

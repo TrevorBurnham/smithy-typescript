@@ -1,0 +1,302 @@
+Statistical profiling result from packages/core/src/submodules/schema/schemas/profiles/baseline-v8.log, (2872 ticks, 1745 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    484   16.9%          /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+    238    8.3%   10.0%  JS: *member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+    176    6.1%    7.4%  JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+    103    3.6%    4.3%  JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     39    1.4%    1.6%  JS: *makeOperationOutput /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:30:29
+     32    1.1%    1.3%  JS: *NormalizedSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:265:16
+     10    0.3%    0.4%  JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      9    0.3%    0.4%  JS: *of /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:317:14
+      7    0.2%    0.3%  JS: *translateTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:221:25
+      7    0.2%    0.3%  JS: *getMergedTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:426:20
+      7    0.2%    0.3%  JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      6    0.2%    0.3%  JS: *getKeySchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:439:17
+      3    0.1%    0.1%  JS: *makeOperationInput /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:46:28
+      2    0.1%    0.1%  JS: *getOwnTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:436:17
+      1    0.0%    0.0%  JS: ^getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      1    0.0%    0.0%  JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1    0.0%    0.0%  JS: *makeSimpleString /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:16:26
+      1    0.0%    0.0%  JS: *getMemberTraits /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:433:20
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+    643   22.4%   26.9%  JavaScript
+      0    0.0%    0.0%  C++
+   1536   53.5%   64.3%  GC
+    484   16.9%          Shared libraries
+   1745   60.8%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   1745   60.8%  UNKNOWN
+     70    4.0%    /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     59   84.3%      JS: *of /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:317:14
+     59  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     21   35.6%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     21  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     20   33.9%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     11   55.0%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      9   45.0%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     15   25.4%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     15  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    5.1%          JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      3  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    4.3%      JS: ~<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      3  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    4.3%      JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+      3  100.0%        /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+      3  100.0%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      2   66.7%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1   33.3%            JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      2    2.9%      JS: ^of /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:317:14
+      1   50.0%        JS: ^simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   50.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1    1.4%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.4%      JS: *member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+      1  100.0%        JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      1  100.0%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1    1.4%      JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      1  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     28    1.6%    JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+     24   85.7%      /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     24  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      9   37.5%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      9  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      8   33.3%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      5   62.5%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      3   37.5%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      7   29.2%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      7  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4   14.3%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      3   75.0%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      3  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   25.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     21    1.2%    JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+     21  100.0%      JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      5   23.8%        JS: ~<anonymous> node:internal/streams/duplex:1:1
+      5  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      5  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      4   19.0%        JS: ~<anonymous> node:tty:1:1
+      4  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      4  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      2    9.5%        JS: ~<anonymous> node:stream:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      2  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      2    9.5%        JS: ~<anonymous> node:perf_hooks:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      2  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      2    9.5%        JS: ~<anonymous> node:internal/streams/operators:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      2  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    4.8%        JS: ~<anonymous> node:net:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    4.8%        JS: ~<anonymous> node:internal/streams/readable:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    4.8%        JS: ~<anonymous> node:internal/streams/pipeline:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    4.8%        JS: ~<anonymous> node:internal/streams/compose:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    4.8%        JS: ~<anonymous> node:internal/perf/timerify:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+      1    4.8%        JS: ~<anonymous> node:internal/perf/observe:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:384:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:421:24
+
+    484   16.9%  /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+    158   32.6%    /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     86   54.4%      JS: *member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+     85   98.8%        JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+     85  100.0%          /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     85  100.0%            JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1    1.2%        JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      1  100.0%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      1  100.0%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     68   43.0%      JS: *of /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:317:14
+     68  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     30   44.1%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     30  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     20   29.4%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     15   75.0%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      5   25.0%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     18   26.5%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     18  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    1.9%      JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+      3  100.0%        /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+      3  100.0%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      2   66.7%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1   33.3%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+    108   22.3%    JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     62   57.4%      JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     62  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     25   23.1%      JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     25  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     21   19.4%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     13   61.9%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     13  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      8   38.1%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      8  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     62   12.8%    JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+     62  100.0%      /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     62  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     29   46.8%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     29  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     19   30.6%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     19  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     14   22.6%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      7   50.0%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      7   50.0%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     55   11.4%    JS: *member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+     48   87.3%      JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+     48  100.0%        /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+     48  100.0%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     26   54.2%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     15   31.3%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      7   14.6%            JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      7   12.7%      JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+      7  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      6   85.7%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      6  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   14.3%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     27    5.6%    JS: *of /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:317:14
+     27  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      9   33.3%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      9  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      9   33.3%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      5   55.6%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      5  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4   44.4%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      4  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      9   33.3%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      9  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     13    2.7%    JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     13  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     11    2.3%    JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+     11  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      7   63.6%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      7  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4   36.4%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      4  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      9    1.9%    JS: *getKeySchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:439:17
+      9  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      5   55.6%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      5  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      4   44.4%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      4  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      9    1.9%    JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      9  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      5    1.0%    JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+    238    8.3%  JS: *member /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:520:16
+    191   80.3%    JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+    191  100.0%      /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+    191  100.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     93   48.7%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     93  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     71   37.2%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     71  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     27   14.1%          JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     18   66.7%            JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      9   33.3%            JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     32   13.4%    JS: *getValueSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:450:19
+     32  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     17   53.1%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     17  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     15   46.9%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     15  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     12    5.0%    JS: *getKeySchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:439:17
+     12  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     10   83.3%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     10  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      2   16.7%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      2  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    1.3%    /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+      3  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      2   66.7%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      2  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1   33.3%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      1  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+    176    6.1%  JS: *structIterator /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:497:20
+    166   94.3%    /Users/trevorbb/.local/share/fnm/node-versions/v22.17.1/installation/bin/node
+    166  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     76   45.8%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     76  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     60   36.1%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     60  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     30   18.1%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     18   60.0%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     18  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     12   40.0%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     12  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      9    5.1%    JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+      6   66.7%      JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      6  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      3   33.3%      JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      3  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+    103    3.6%  JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     48   46.6%    JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     48  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     30   29.1%    JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     30  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     23   22.3%    JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     18   78.3%      JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     18  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      5   21.7%      JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      5  100.0%        JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    1.9%    JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     39    1.4%  JS: *makeOperationOutput /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:30:29
+     24   61.5%    JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     24  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     14   35.9%    JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     14  100.0%      JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.6%    JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
+     32    1.1%  JS: *NormalizedSchema /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:265:16
+     32  100.0%    JS: *of /Users/trevorbb/Code/smithy-typescript/packages/core/dist-cjs/submodules/schema/index.js:317:14
+     32  100.0%      JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     16   50.0%        JS: *simulateSerialize /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:60:27
+     11   68.8%          JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     11  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      5   31.3%          JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      5  100.0%            JS: ~<anonymous> node:internal/main/run_main_module:1:1
+     10   31.3%        JS: *<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+     10  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+      6   18.8%        JS: ^<anonymous> /Users/trevorbb/Code/smithy-typescript/packages/core/src/submodules/schema/schemas/profile-baseline.cjs:1:1
+      6  100.0%          JS: ~<anonymous> node:internal/main/run_main_module:1:1
+
